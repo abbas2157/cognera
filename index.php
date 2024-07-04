@@ -33,9 +33,9 @@ if($_POST)
             array_push($error,"$file_name, ");
         }
     }
-    return json_encode($error);
+    echo json_encode($error);
 }
 else
 {
-    return "Please Select File.";
+    echo "Please Select File.";
 }
