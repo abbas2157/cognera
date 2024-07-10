@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 header('Access-Control-Allow-Origin: https://cognera.ai');
 header("Access-Control-Allow-Credentials: true");
 header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-
+echo json_encode($_POST);
 if($_POST)
 {
     $file_parts = pathinfo($filename);
