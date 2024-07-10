@@ -3,6 +3,10 @@
 // ini_set('display_startup_errors', '1');
 // error_reporting(E_ALL);
 
+@ini_set( 'upload_max_size' , '200M' );
+@ini_set( 'post_max_size', '200M');
+@ini_set( 'max_execution_time', '300' );
+
 header('Access-Control-Allow-Origin: https://cognera.ai');
 header("Access-Control-Allow-Credentials: true");
 header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
