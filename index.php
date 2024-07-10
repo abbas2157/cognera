@@ -9,9 +9,6 @@ header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
 
 if($_FILES)
 {
-    $file_parts = pathinfo($filename);
-
-    $file_parts['extension'];
     $cool_extensions = Array('jpg','png','jpeg','dcm','DCM');
 
     $error = array();
