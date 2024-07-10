@@ -1,12 +1,12 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
 
 header('Access-Control-Allow-Origin: https://cognera.ai');
 header("Access-Control-Allow-Credentials: true");
 header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-echo json_encode($_FILES);
+
 if($_FILES)
 {
     $file_parts = pathinfo($filename);
@@ -41,7 +41,7 @@ if($_FILES)
             array_push($error,"$file_name, ");
         }
     }
-    echo json_encode($error);
+    echo json_encode(['success' => $error]);
 }
 else
 {
