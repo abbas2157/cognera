@@ -45,5 +45,5 @@ if($_POST)
 }
 else
 {
-    echo json_encode(array('error' => '"Please Select File."'));
+    echo json_encode(array('error' => "Please Select File."));
 }
