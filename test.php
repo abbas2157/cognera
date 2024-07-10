@@ -21,27 +21,28 @@ jQuery.each(jQuery('#file')[0].files, function(i, file) {
 $(".update").click(function(e) {
     // Stops the form from reloading
     e.preventDefault();
-        $.ajax({
-            url: 'index.php',
-            type: 'POST',
-            contentType:false,
-            processData: false,
-            data: function(){
-                var data = new FormData();
-                jQuery.each(jQuery('#file')[0].files, function(i, file) {
-                    data.append('file-'+i, file);
-                });
-                data.append('body' , $('#body').val());
-                data.append('uid', $('#uid').val());
-                return data;
-            }(),
-                success: function(result) {
-                // alert(result);
-                },
-            error: function(xhr, result, errorThrown){
-                alert('Request failed.');
-            }
-        });
+    $.ajax({
+        url: 'index.php',
+        type: 'POST',
+        contentType:false,
+        processData: false,
+        dataType : 'json',
+        data: function(){
+            var data = new FormData();
+            jQuery.each(jQuery('#file')[0].files, function(i, file) {
+                data.append('file-'+i, file);
+            });
+            data.append('body' , $('#body').val());
+            data.append('uid', $('#uid').val());
+            return data;
+        }(),
+            success: function(result) {
+            // alert(result);
+            },
+        error: function(xhr, result, errorThrown){
+            alert('Request failed.');
+        }
+    });
 });
     </script>
 </body>

@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: http://www.example.com');
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+
 if($_POST)
 {
     $file_parts = pathinfo($filename);
@@ -37,5 +41,5 @@ if($_POST)
 }
 else
 {
-    echo "Please Select File.";
+    return json_encode(array('error' => '"Please Select File."'));
 }
