@@ -1,5 +1,9 @@
 <?php
-header('Access-Control-Allow-Origin: *');
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+header('Access-Control-Allow-Origin: https://cognera.ai');
 header("Access-Control-Allow-Credentials: true");
 header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
 
@@ -41,5 +45,5 @@ if($_POST)
 }
 else
 {
-    return json_encode(array('error' => '"Please Select File."'));
+    echo json_encode(array('error' => '"Please Select File."'));
 }
